@@ -9,8 +9,8 @@ the list of line frequencies alone, and a least-squares fit then refines the res
 | Molecule type       | Parameters | Supported transitions                                             |
 |---------------------|---|-------------------------------------------------------------------|
 | linear              | B, DJ | J &rarr; J+1                                                      |
-| symmetric (prolate) | B, DJ, DJK (+ HJ, HJK, HKJ when there are many lines) | J &rarr; J+1, $\Delta$K=0                                         |
-| asymmetric          | A, B, C, DJ, DJK, DK, δJ, δK | a-type, J &rarr; J+1 <br><sub>($\Delta$Ka=0, $\Delta$Kc=+1)</sub> |
+| symmetric (prolate) | B, DJ, DJK (+ HJ, HJK, HKJ when there are many lines) | J &rarr; J+1, &#916;K=0                                         |
+| asymmetric          | A, B, C, DJ, DJK, DK, δJ, δK | a-type, J &rarr; J+1 <br><sub>(&#916;Ka=0, &#916;Kc=+1)</sub> |
 
 For all parameters the program reports a 1$\sigma$ uncertainty and flags those that the data
 hardly constrain (e.g. A and DK in a-type series).
