@@ -11,33 +11,6 @@ Scope:
 - optional physical refinement of the ML estimate (linear least squares
   on lines assigned to the nearest predicted transition) - the paper
   itself says the ANN output should be "tightened up with standard fitting"
-
-Changes with respect to v1 (see also: multi-start, bootstrapped refinement,
-log-B target scaler):
-- input features no longer a 195 MHz-wide histogram: they are built from the
-  lowest N peaks (log f1, ratios f_i/f1, log of gaps), so MHz-level
-  information survives
-- peak lists are merged (unresolved lines) identically in training and use
-- realistic parameter ranges (B up to 60 GHz, DJ ~ 1e-7..3e-6 * B,
-  signed DJK), frequency window up to 300 GHz
-- train/validation split done per class, no index bookkeeping
-- validation reports errors in MHz, plus the error after refinement
-- `benchmark` command: literature constants from the paper (idealised,
-  without hyperfine structure)
-- fixed the "\\t" typo in load_peak_list
-- public API used by rainet_dashboard.py is unchanged
-
-v4 adds the asymmetric class: Watson A-reduction levels (Ir representation)
-from exact diagonalisation, a Boltzmann-like cut of the lower-state energy,
-a log target scaler for A, B, C and a non-linear multi-start fit. The refinement
-fits the rigid rotor first and then the quartic constants DJ, DJK, DK, dJ, dK
-(with weak priors; poorly determined ones are flagged via parameter_uncertainties).
-Symmetric tops optionally get sextic terms HJ, HJK, HKJ. `labelled_lines` returns
-model lines with quantum-number labels; `predict_from_peaks(force_kind=...)` skips
-the automatic class choice.
-Not implemented: b/c-type transitions, hyperfine and fine structure, oblate or
-inversion-doubled tops, intensities, blends and mixtures. This is a research
-prototype, not a replacement for SPFIT/SPCAT.
 """
 
 import argparse
